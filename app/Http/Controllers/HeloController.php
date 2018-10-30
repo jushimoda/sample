@@ -11,6 +11,9 @@ class HeloController extends Controller
 {
     public function get()
     {
-        return view('helo', ['message' => 'Hello!']);
+        $date = "2018-03-31";
+        $next_month = date('Y-m-01', strtotime(date($date).'-1 month'));
+
+        return view('helo', ['message' => $next_month]);
     }
 }
